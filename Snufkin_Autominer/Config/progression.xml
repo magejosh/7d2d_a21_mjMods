@@ -1,0 +1,41 @@
+<configs>
+	<!-- old a20 method, can be uncommented if you'd prefer the unlock is by perk point rather than or in addition to the new LBL method. you can allow it to unlock with both or one or the other. if you do, also alter the unlocked by property on the workstation block.xml entry for it too, there's comments to help there for you. -->
+<!-- <append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']"> 
+	<effect_group>
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="3,5" value="1" tags="AutoMiner"/>
+	</effect_group>
+</append> -->
+
+	<!-- mjedit - the a21 method to unlock it follows, i opted to keep it at the midrange of the perk progression unlock like i had it in a20, though for gameplay balance, it might be better to replace cementMixer on the following two lines with toolForgeCrucible as that should keep it from being abused until mid to late game:  -->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry/unlock_entry[contains(@item, 'cementMixer')]/@item">,AutoMiner</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/effect_group/passive_effect[@name='RecipeTagUnlocked' and contains(@tags, 'cementMixer')]/@tags">,AutoMiner</append>
+
+
+<!-- the lines below are how it rewards players who spend points on perkAdvancedEngineering, by making them able to use the autoMiner better. -->
+
+<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group">
+	<passive_effect name="CraftingOutputCount" operation="perc_add" level="1,5" value="0.1" tags="recipetag,desert"/>
+	<passive_effect name="CraftingOutputCount" operation="perc_add" level="2,5" value="0.01" tags="recipetag,desert"/>
+	<passive_effect name="CraftingOutputCount" operation="perc_add" level="3,5" value="0.02" tags="recipetag,desert"/>
+	<passive_effect name="CraftingOutputCount" operation="perc_add" level="4,5" value="0.02" tags="recipetag,desert"/>
+	<passive_effect name="CraftingOutputCount" operation="perc_add" level="5,5" value="0.1" tags="recipetag,desert"/>
+	<!-- mjedit - ignore the lines under this comment, they are legacy from something else i may provide a functional modlet for in the future. -->
+	<!-- <effect_group><passive_effect name="CraftingOutputCount" operation="base_add" level="1,5" value="0.1" tags="recipetag"/></effect_group> -->
+	<!-- <effect_group><passive_effect name="CraftingOutputCount" operation="base_add" level="1,5" value="@currrentPlayerLevel" tags="recipetag"/></effect_group> -->
+</append>
+<append xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group">
+			<passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-0.01" tags="autoMiner"/>
+			<passive_effect name="CraftingTime" operation="perc_add" level="2,5" value="-0.01" tags="autoMiner"/>
+			<passive_effect name="CraftingTime" operation="perc_add" level="3,5" value="-0.01" tags="autoMiner"/>
+			<passive_effect name="CraftingTime" operation="perc_add" level="4,5" value="-0.02" tags="autoMiner"/>
+			<passive_effect name="CraftingTime" operation="perc_add" level="5" value="-0.02" tags="autoMiner"/>
+
+			<passive_effect name="CraftingOutputCount" operation="perc_add" level="1,5" value="0.02" tags="autoMiner,perkAdvancedEngineering"/>
+			<passive_effect name="CraftingOutputCount" operation="perc_add" level="2,5" value="0.02" tags="autoMiner,perkAdvancedEngineering"/>
+			<passive_effect name="CraftingOutputCount" operation="perc_add" level="3,5" value="0.02" tags="autoMiner,perkAdvancedEngineering"/>
+			<passive_effect name="CraftingOutputCount" operation="perc_add" level="4,5" value="0.02" tags="autoMiner,perkAdvancedEngineering"/>
+			<passive_effect name="CraftingOutputCount" operation="perc_add" level="5" value="0.02" tags="autoMiner,perkAdvancedEngineering"/>
+</append>
+
+</configs>

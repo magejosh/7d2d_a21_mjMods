@@ -1,0 +1,25 @@
+<configs> 
+
+	<append xpath="/blockplaceholders">
+		<placeholder name="placeholdercontrolPanelBase01">
+			<block name="controlPanelBase01" prob="0.11"/>
+			<block name="AutoMiner" prob="0.13"/>
+		</placeholder>
+	</append>
+	<append xpath="/blockplaceholders/placeholder[@name='cntForgeBustedRandomLootHelper']">
+			<block name="forge" prob="0.37"/>
+			<block name="AutoMiner" prob="0.36"/>
+	</append>
+	<append xpath="/blockplaceholders/placeholder[@name='cntWorkbenchBustedRandomLootHelper']">
+			<block name="workbench" prob="0.37"/>
+			<block name="placeholdercontrolPanelBase01" prob="0.33"/>
+	</append>
+	<append xpath="/blockplaceholders/placeholder[@name='cntCementMixerBustedRandomLootHelper']">
+			<block name="cementMixer" prob="0.37"/>
+			<block name="AutoMiner" prob="0.33"/>
+	</append>
+	<append xpath="/blockplaceholders/placeholder[@name='cntChemistryStationBustedRandomLootHelper']">
+			<block name="chemistryStation" prob="0.37"/>
+			<block name="placeholdercontrolPanelBase01" prob="0.33"/>
+	</append>
+</configs> 

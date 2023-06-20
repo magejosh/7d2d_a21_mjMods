@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="AutoMiner" /> <!-- (Required) Internal name, like an ID, of the mod. Should be globally unique, like an author prefix + name. Only allowed chars: Numbers, latin letters, underscores, dash -->
+    <DisplayName value="Snufkins's AutoMiner" /> <!-- (Required) Name used for display purposes, like shown in the mods UI at some point. Could be the same as you would later on use on workshop or wherever mods get distributed -->
+    <Version value="21.0.0.001" /> <!-- (Required) SemVer version of the mod. Has to be in the format major.minor[.build[.revision]] (i.e. build and revision can be left out, recommend using them though as typically done with Semantic Versioning -->
+    <Description value="Updates and Expands on Snufkin's older a18 version to a21. Adds category tabs to the recipes area of the autominer and scales crafting times and outputs based on updated tools as well as adds in description to the workstation. Gas bundle infinite resource loop fix." /> <!-- (Optional) More text to show on UIs -->
+    <Author value="Snufkin,magejosh" /> <!-- (Optional) Name(s) of the author(s) -->
+    <Website value="https://mageworks.studio" /> <!-- (Optional) URL of a website of the mod -->
+</xml>
